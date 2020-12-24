@@ -18,10 +18,23 @@ String[] suspects;
 			this.nextIndex = 0;
 		}
 	}
-	
 	public void printSuspects() {
 		for (int i = 0; i < this.suspects.length; i++) {
+			if (null == this.suspects[i]) {
+				continue;
+			}
 			System.out.println(this.suspects[i]);
 		}
+	}
+	public boolean foundMatch(String input) {
+		for (int i = 0; i < this.suspects.length; i++) {
+			if (null == this.suspects[i]) {
+				continue;
+			}
+			if (this.suspects[i].equalsIgnoreCase(input)) {
+				return true;
+			}
+		}
+		return false;
 	}
 }
